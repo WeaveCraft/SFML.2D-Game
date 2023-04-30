@@ -1,18 +1,24 @@
 #include <iostream>
-#include <SFML/Graphics.hpp>
-#include <SFML/System.hpp>
-#include <SFML/Window.hpp>
-#include <SFML/Audio.hpp>
-#include <SFML/Network.hpp>
+#include "Game.h"
+
 
 int main() {
-	sf::RenderWindow window(sf::VideoMode(600, 600), "SFML Works");
+	//init game engine
 
-	while (window.isOpen())
+	Game game;
+
+	//Game loop
+	while (game.running())
 	{
-		window.clear(sf::Color::Black);
-		sf::RectangleShape rs(sf::Vector2f(100, 100));
-		window.draw(rs);
-		window.display();
+		//Update
+		game.update();
+
+		//Render
+		game.render();
+
+		
 	}
+
+	//End of application
+	return 0;
 }
