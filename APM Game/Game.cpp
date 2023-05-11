@@ -63,16 +63,23 @@ void Game::pollEvents()
 	}
 }
 
+void Game::updateMousePositions()
+{
+	/*
+		@return void
+
+		Updates the mouse positions:
+			- Mouse position relative to window (Vector2i)
+	*/
+
+	this->mousePosWindow = sf::Mouse::getPosition(*this->window);
+}
+
 void Game::update()
 {
 	this->pollEvents();
 
-	//Update mouse position
-	//Relative to the screen
-	//std::cout << "Mouse pos: " << sf::Mouse::getPosition().y << " " << sf::Mouse::getPosition().x << "\n";
-	//Relative to the window
-	std::cout << "Mouse pos: " << sf::Mouse::getPosition(*this->window).y << " " << sf::Mouse::getPosition(*this->window).x << "\n";
-	
+	this->updateMousePositions();
 }
 
 void Game::render()

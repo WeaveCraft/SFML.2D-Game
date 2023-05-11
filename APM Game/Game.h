@@ -1,6 +1,7 @@
 #pragma once
 
 #include<iostream>
+#include<vector>
 
 #include <SFML/Graphics.hpp>
 #include <SFML/System.hpp>
@@ -22,6 +23,9 @@ private:
 	sf::VideoMode videoMode;
 	sf::Event ev;
 
+	//Mouse positions
+	sf::Vector2i mousePosWindow;
+
 	//Game Objects
 	sf::RectangleShape enemy;
 
@@ -39,6 +43,7 @@ public:
 
 	//Functions
 	void pollEvents();
+	void updateMousePositions();
 	void update();
 	void render();
 };
