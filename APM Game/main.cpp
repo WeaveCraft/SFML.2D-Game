@@ -3,8 +3,10 @@
 
 
 int main() {
-	//init game engine
+	//Init srand
+	srand(static_cast<unsigned>(time(NULL)));
 
+	//init game engine
 	Game game;
 
 	//Game loop
