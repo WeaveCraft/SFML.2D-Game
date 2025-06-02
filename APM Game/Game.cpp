@@ -1,15 +1,12 @@
 #include "Game.h"
 #include <memory>
 
-// === Constants ===
 constexpr unsigned WINDOW_WIDTH = 800;
 constexpr unsigned WINDOW_HEIGHT = 600;
 constexpr float ENEMY_SPAWN_TIMER_MAX = 1000.f;
 constexpr unsigned MAX_ENEMIES = 5;
 constexpr sf::Vector2f ENEMY_SIZE = {100.f, 100.f};
 constexpr sf::Vector2f ENEMY_SCALE = {0.5f, 0.5f};
-
-// === Private Initialization ===
 
 void Game::initializeVariables()
 {
