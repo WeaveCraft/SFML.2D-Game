@@ -1,63 +1,60 @@
 #pragma once
 
-#include<iostream>
-#include<vector>
-#include<ctime>
-
 #include <SFML/Graphics.hpp>
 #include <SFML/System.hpp>
 #include <SFML/Window.hpp>
 #include <SFML/Audio.hpp>
 #include <SFML/Network.hpp>
 
-/*
-	Class that acts as the game eninge.
-	Wrapper Class.
-*/
+#include <iostream>
+#include <vector>
+#include <ctime>
 
+/*
+    Game Engine Wrapper Class
+*/
 class Game
 {
 private:
-	//Variables
-	//Window
-	sf::RenderWindow* window;
-	sf::VideoMode videoMode;
-	sf::Event ev;
+    // Window
+    sf::RenderWindow* window;
+    sf::VideoMode videoMode;
+    sf::Event event;
 
-	//Mouse positions
-	std::vector<sf::RectangleShape> enemies;
-	sf::Vector2i mousePosWindow;
+    // Mouse positions
+    sf::Vector2i mousePosWindow;
 
-	//Game logic
-	int points;
-	float enemySpawnTimer;
-	float enemySpawnTimerMax;
-	int maxEnemies;
+    // Game logic
+    int points;
+    float enemySpawnTimer;
+    float enemySpawnTimerMax;
+    int maxEnemies;
 
-	//Game Objects
-	sf::RectangleShape enemy;
+    // Game objects
+    sf::RectangleShape enemyPrototype;
+    std::vector<sf::RectangleShape> enemies;
 
-	//private functions
-	void initializeVariables();
-	void initializeWindow();
-	void initEnemies();
+    // Initialization
+    void initializeVariables();
+    void initializeWindow();
+    void initializeEnemies();
+
 public:
-	//Constructors / Desctructors
-	Game();
-	virtual ~Game();
+    // Constructor / Destructor
+    Game();
+    virtual ~Game();
 
-	//Accessors
-	const bool running() const;
+    // Accessors
+    bool running() const;
 
-	//Functions
-	void spawnEnemy();
+    // Game logic functions
+    void spawnEnemy();
+    void pollEvents();
+    void updateMousePositions();
+    void updateEnemies();
+    void update();
 
-	void pollEvents();
-
-	void updateMousePositions();
-	void updateEnemies();
-	void update();
-
-	void renderEnemies();
-	void render();
+    // Render functions
+    void renderEnemies();
+    void render();
 };
