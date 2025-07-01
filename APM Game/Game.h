@@ -10,9 +10,7 @@
 #include <vector>
 #include <ctime>
 
-/*
-    Game Engine Wrapper Class
-*/
+
 class Game
 {
 private:
