@@ -22,7 +22,6 @@ Game::Game() {
 
 Game::~Game() = default;
 
-// Initialization
 void Game::initializeVariables() {
 	points = 0;
 	enemySpawnTimer = ENEMY_SPAWN_TIMER_MAX;
