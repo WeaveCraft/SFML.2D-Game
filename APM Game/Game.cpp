@@ -13,7 +13,6 @@ namespace {
 	constexpr float ENEMY_MOVE_SPEED = 5.f;
 }
 
-// Constructor / Destructor
 Game::Game() {
 	initializeVariables();
 	initializeWindow();
